@@ -1,0 +1,65 @@
+﻿@model WorkersList.Models.Darbuotojas
+
+@{
+    ViewBag.Title = "Išsami informacija";
+}
+
+<h2>Išsami informacija apie darbuotoją</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vardas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavarde)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pavarde)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asmens_kodas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asmens_kodas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gimimo_data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gimimo_data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aktyvumo_pozymis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aktyvumo_pozymis)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Redaguoti", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Atgal į sąrašą", "Index")
+</p>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<WorkersList.Models.Darbuotojas>
+
+@{
+    ViewBag.Title = "Darbuotojų sąrašas";
+}
+
+<h2>Darbuotojų sąrašas</h2>
+
+<p>
+    @Html.ActionLink("Pridėti naują darbuotoją", "Create")
+</p>
+<p>
+    @using (Html.BeginForm("Index", "Darbuotojas", FormMethod.Post))
+    {
+        @Html.Label("Aktyvūs: ")
+        @Html.CheckBox("aktyvus")
+        @Html.Label("Neaktyvūs: ")
+        @Html.CheckBox("neaktyvus")
+        <br />
+        <input type="submit" value="Nustatyti filtrą" class="btn btn-default" />
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pavarde)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asmens_kodas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gimimo_data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aktyvumo_pozymis)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vardas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pavarde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asmens_kodas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gimimo_data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adresas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aktyvumo_pozymis)
+        </td>
+        <td>
+            @Html.ActionLink("Redaguoti", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Išsamiau", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Panaikinti", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

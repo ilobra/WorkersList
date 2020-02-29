@@ -1,0 +1,73 @@
+﻿@model WorkersList.Models.Darbuotojas
+
+@{
+    ViewBag.Title = "Darbuotojo panaikinimas";
+}
+
+<h2>Darbuotojo panaikinimas</h2>
+
+<h3>Darbuotojo būsena bus pakeista į neaktyvią</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vardas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavarde)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pavarde)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asmens_kodas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asmens_kodas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gimimo_data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gimimo_data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aktyvumo_pozymis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aktyvumo_pozymis)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Padaryti neaktyvų" class="btn btn-default" /> |
+            @Html.ActionLink("Atgal į sąrašą", "Index")
+        </div>
+    }
+
+</div>
