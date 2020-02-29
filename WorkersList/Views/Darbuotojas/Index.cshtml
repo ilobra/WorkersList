@@ -4,21 +4,21 @@
     ViewBag.Title = "Darbuotojų sąrašas";
 }
 
-<h2>Darbuotojų sąrašas</h2>
+<center><h2>Darbuotojų sąrašas</h2></center>
 
 <p>
-    @Html.ActionLink("Pridėti naują darbuotoją", "Create")
+    <center>@Html.ActionLink("Pridėti naują darbuotoją", "Create",  null, new { @class = "btn btn-primary" })</center>
 </p>
 <p>
-    @using (Html.BeginForm("Index", "Darbuotojas", FormMethod.Post))
+    <center>@using (Html.BeginForm("Index", "Darbuotojas", FormMethod.Post))
     {
         @Html.Label("Aktyvūs: ")
         @Html.CheckBox("aktyvus")
         @Html.Label("Neaktyvūs: ")
         @Html.CheckBox("neaktyvus")
         <br />
-        <input type="submit" value="Nustatyti filtrą" class="btn btn-default" />
-    }
+        <input type="submit" value="Nustatyti filtrą" class="btn btn-primary" />
+    }</center>
 </p>
 <table class="table">
     <tr>
