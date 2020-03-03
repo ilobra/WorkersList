@@ -128,4 +128,7 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="dbo\Tables\dbo.Darbuotojas.data.sql" />
+  </ItemGroup>
 </Project>
